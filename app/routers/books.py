@@ -43,6 +43,7 @@ async def create_book(book: book_schema.BookCreate, db: Session = Depends(get_db
         return db_book
 
     except Exception as e:
+        db.rollback()  # Rollback to free the lock
         logging.error(f"Error creating book: {str(e)}")
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
