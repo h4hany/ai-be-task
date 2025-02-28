@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from .database import engine
-from .models import user, book
-from .routers import auth, books
+from app.database import engine
+from app.models import user, book
+from app.routers import auth, books
 
 # Create database tables
 user.Base.metadata.create_all(bind=engine)

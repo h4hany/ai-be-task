@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from ..database import get_db
-from ..models import book as book_model
-from ..schemas import book as book_schema
-from ..services import GroqService
-from ..services.gutenberg import GutenbergService
-from ..services.text_analysis import TextAnalysisService
+from app.database import get_db
+from app.models import book as book_model
+from app.schemas import book as book_schema
+from app.services import GroqService
+from app.services.gutenberg import GutenbergService
+from app.services.text_analysis import TextAnalysisService
 from typing import List
 import logging
 
