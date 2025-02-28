@@ -8,7 +8,7 @@ class GroqService:
         self.client = groq.Client(api_key=os.getenv("GROQ_API_KEY"))
 
     def analyze_book(self, book_content: str):
-        """Performs character analysis, sentiment analysis, language detection, and plot summarization."""
+        """Handle the prompt to so later i can split them into my structure character analysis, sentiment analysis, language detection, and plot summarization."""
 
         book_excerpt = book_content[:3000]  # Limit input
 
